@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DOM Exercises</title>
+</head>
+<body>
+  <button class="js-btn-9a" 
+    onclick="displayBtn();"
+  >9a</button>
+
+  <button class="js-btn-9b" 
+    onclick="change9b();"
+  >9b</button>
+
+  <button class="js-heads" 
+    onclick="headsOrTails('heads')"
+  >heads</button>
+
+  <button class="js-tails" 
+    onclick="headsOrTails('tails')"
+  >tails</button>
+
+  <p class="js-result"></p>
+
+  <input class="js-name-input"
+    onkeydown="displayWithEnterKey(event);"
+  >
+
+  <button class="js-submit-btn" onclick="dispayName();">Submit</button>
+
+  <p class="js-display-name"></p>
+
+  <script>
+    const displayBtn = () => console.log(document.querySelector('.js-btn-9a'));
+    
+    const change9b = () => document.querySelector('.js-btn-9b').innerHTML = '9b done';
+
+    let resultElement = document.querySelector('.js-result');
+    const headsOrTails = choice => choice === 'heads' ? resultElement.innerHTML = `You chose: ${choice}` : resultElement.innerHTML = `You chose: ${choice}`;
+
+    function dispayName() {
+      const name = document.querySelector('.js-name-input').value;
+      const display = document.querySelector('.js-display-name')
+      display.innerHTML = `Your name is: ${name}`;
+    }
+
+    function displayWithEnterKey(event) {
+      event.key === 'Enter' && dispayName();
+    }
+  </script>
+</body>
+</html>

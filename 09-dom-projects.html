@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DOM Projects</title>
+</head>
+<body>
+
+  <p>Youtube Subscribe Button</p>
+  <button class="js-subBtn" onclick="subscribe();">Subscribe</button>
+
+  <br>
+  <br>
+  <br>
+
+  <p>Rock Paper Scissors</p>
+  <a href="./09-rock-paper-scissors.html">Click here</a>
+
+  <br>
+  <br>
+  <br>
+
+  <p>Amazon Shipping Calculator</p>
+  <p>Orders under $40 = +$10 shipping.</p>
+  <p>Orders over $40 = FREE shipping.</p>
+
+  <input 
+    placeholder="Cost of order" 
+    class="js-cost" 
+    onkeydown="calculateWithEnterKey(event);"
+  >
+
+  <button class="js-calculate" onclick="calculate();">Calculate</button>
+
+  <p class="js-total"></p>
+  <script>
+    // Subscribe button function
+    let buttonElement = document
+      .querySelector('.js-subBtn');
+    
+    const subscribe = () => buttonElement.innerHTML === 'Subscribe' ? buttonElement.innerHTML = 'Subscribed' : buttonElement.innerHTML = 'Subscribe';
+
+    // Amazon Shipping Calculator code
+    function calculate() {
+      const cost = document
+        .querySelector('.js-cost')
+        .value;
+      const totalDisplay = document
+        .querySelector('.js-total');
+      totalDisplay
+        .innerHTML = cost < 40 ? `$${Number(cost)+10}` : `$${cost}`;
+    }
+
+    // when enter key is clicked, do the same thing as when calculate button is clicked
+    const calculateWithEnterKey = (event) => event.key === 'Enter' && calculate();
+  </script>
+</body>
+</html>

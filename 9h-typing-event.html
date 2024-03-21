@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>9h Exercise</title>
+</head>
+<body>
+  
+  <input type="text" class="js-text-input" onkeyup="updateText(event);">
+  
+  <p class="js-output-text"></p>
+
+  <script>
+    function updateText(event) {
+      const inputBox = document.querySelector('.js-text-input');
+      const outputText = document.querySelector('.js-output-text');
+      outputText.textContent = inputBox.value;
+    }
+  </script>
+</body>
+</html>

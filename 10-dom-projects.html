@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DOM Projects</title>
+  <style>
+    
+    body {
+      font-family: Arial;
+    }
+    
+    .subscribe-btn {
+      border: none;
+      background-color: black;
+      color: white;
+      padding-top: 10px;
+      padding-bottom: 10px;
+      padding-right: 15px;
+      padding-left: 15px;
+      border-radius: 50px;
+      font-weight: bold;
+      cursor: pointer;
+      margin-bottom: 30px;
+    }
+
+    .is-subscribed {
+      background-color: rgb(240, 240, 240);
+      color: black;
+    }
+
+    .cost-input {
+      font-size: 15px;
+      padding: 10px;
+    }
+
+    .calculate-btn {
+      border: none;
+      background-color: green;
+      color: white;
+      padding: 12px 15px;
+      font-size: 15px;
+      cursor: pointer;
+    }
+
+  </style>
+</head>
+<body>
+
+  <p>YouTube Subscribe Button</p>
+  <button class="js-subBtn subscribe-btn" onclick="subscribe();">Subscribe</button>
+
+  <br>
+
+  <p>Amazon Shipping Calculator</p>
+  <p>Orders under $40 = +$10 shipping.</p>
+  <p>Orders over $40 = FREE shipping.</p>
+
+  <input 
+    placeholder="Cost of order" 
+    class="js-cost cost-input" 
+    onkeydown="calculateWithEnterKey(event);"
+  >
+
+  <button class="calculate-btn" onclick="calculate();">Calculate</button>
+
+  <p class="js-total"></p>  
+  
+  <br>
+  <br>
+  
+  <p>Rock Paper Scissors</p>
+  <a href="./09-rock-paper-scissors.html">Click here</a>
+
+  <script>
+    // Subscribe button function
+    let buttonElement = document
+      .querySelector('.js-subBtn');
+    
+    const subscribe = () => buttonElement.innerHTML === 'Subscribe' ? (buttonElement.innerHTML = 'Subscribed', buttonElement.classList.add('is-subscribed')) : (buttonElement.innerHTML = 'Subscribe', buttonElement.classList.remove('is-subscribed'));
+
+    // Amazon Shipping Calculator code
+    function calculate() {
+      const cost = document
+        .querySelector('.js-cost')
+        .value;
+      const totalDisplay = document
+        .querySelector('.js-total');
+      totalDisplay
+        .innerHTML = cost < 40 ? `$${Number(cost)+10}` : `$${cost}`;
+    }
+
+    // when enter key is clicked, do the same thing as when calculate button is clicked
+    const calculateWithEnterKey = (event) => event.key === 'Enter' && calculate();
+  </script>
+</body>
+</html>

@@ -1,0 +1,28 @@
+body {
+  background-color: rgb(69, 63, 55);
+}
+.cart-btn {
+  font-family: Arial;
+  font-size: 16px;
+  background-color: rgb(255, 229, 98);
+  border: none;
+  padding: 7px 50px;
+  border-radius: 20px;
+}
+
+.request-btn {
+  background-color: black;
+  color: white;
+  font-weight: bold;
+  border: none;
+  padding: 10px 19px;
+  border-radius: 5px;
+}
+
+.schedule-btn {
+  background-color: rgb(240, 240, 240);
+  border: none;
+  font-weight: bold;
+  padding: 10px 19px;
+  border-radius: 3px;
+}

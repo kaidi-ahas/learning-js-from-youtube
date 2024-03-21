@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Advanced Functions</title>
+</head>
+<body>
+  <button onclick="" class="js-click-btn">click</button>
+ 
+  <script>
+    const buttonElement = document.querySelector('.js-click-btn');
+
+    buttonElement.addEventListener('click', () => {
+      console.log('click');
+    })
+
+
+    const eventListener = () => { console.log('click2') };
+
+    buttonElement.addEventListener('click2', eventListener)
+
+    buttonElement.removeEventListener('click2', eventListener)
+
+
+    // const object2 = {
+    //   method() {
+
+    //   }
+    // }
+
+    // const regularFunction = function(param, param2) {
+    //   console.log('cool');
+    //   return 5;
+    // };
+    // regularFunction();
+
+    const arrowFunction = (param, param2) => {
+      console.log('jello');
+      return 5;
+    };
+
+    // arrowFunction();
+
+    const oneParam = param => {
+      console.log(param+1);
+    };
+
+    // oneParam('hi');
+
+    const oneLine = () => 2+3;
+    // console.log(oneLine());
+    
+    // [
+    //   'dance',
+    //   'move',
+    //   'run'
+    // ].forEach((value, index) => {
+    //   if (value === 'move') {
+    //     return;
+    //   }
+    //   console.log(value, index);
+    // });
+    /*
+    function greeting() {
+      console.log('hello');
+    }
+    greeting();
+
+    const someFunc = function() {
+      console.log('good day, sir')
+    }
+
+    console.log(function1);
+    console.log(typeof someFunc);
+    someFunc();
+
+    const object1 = {
+      num: 2,
+      fun: function() {
+        return 'good morning';
+      }
+    };
+
+    console.log(object1.fun());
+
+    function display(param) {
+      console.log(param);
+    }
+
+    display(2);
+
+    function run(param) {
+      param();
+    }
+
+    run(function() {
+      console.log('hi again')
+    });
+
+    setTimeout(function() {
+      console.log('timeout');
+    }, 3000);
+
+    console.log('next line');
+
+    setInterval(function() {
+      console.log('interval');
+    }, 3000)
+    */
+    
+  </script>
+</body>
+</html>

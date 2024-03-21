@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <button onclick="flipACoin('heads')">heads</button>
+  <button onclick="flipACoin('tails')">tails</button>
+  <button onclick="resetScore()">reset score</button>
+  <button onclick="alert(`wins: ${score.wins}, losses: ${score.losses}`)">current score</button>
+  
+  <script>
+    const storedScore = localStorage.getItem('score');
+
+    let score = JSON.parse(storedScore) || {
+      wins: 0,
+      losses: 0
+    };
+
+    function flipACoin(guess) {
+      const randomNumber = Math.random();
+      const headsOrTails = randomNumber < 0.5 ? 'heads' : 'tails';
+      
+      result = guess === headsOrTails ? `It really was ${headsOrTails}. You win!` : `It was ${headsOrTails}. You lose..`;
+      
+      
+      if (result === `It really was ${headsOrTails}. You win!`) {
+        score.wins++;
+      } else {
+        score.losses++;
+      }
+      
+      alert(result+`\nWins: ${score.wins}, Losses: ${score.losses}`);
+
+      localStorage.setItem('score', JSON.stringify(score));
+    }
+
+    function resetScore() {
+      score.wins=0;
+      score.losses=0;
+
+      localStorage.removeItem('score');
+    }
+  </script>
+</body>
+</html>

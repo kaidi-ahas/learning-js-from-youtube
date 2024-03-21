@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Exercises</title>
+</head>
+<body>
+  <!-- <button class="js-start-btn" onclick="clickButton();">Start</button> -->
+  
+  <!-- <button class="js-add-btn" onclick="addToCart();">Add to cart</button>
+  <p class="js-display-msg"></p> -->
+  <button class="js-msg-add-btn" onclick="addMessage();">Add</button>
+  <button class="js-msg-remove-btn" onclick="removeMessage();">Remove</button>
+
+
+  <script>
+    document.title = 'App';
+    let messages = 1;
+    let intervalId;
+
+    function setMessages() {
+      intervalId = setInterval(function() {
+        if (messages === 0) {
+          document.title = 'App';
+          clearInterval(intervalId);
+        } else if (document.title === 'App') {
+          document.title = `(${messages}) New Messages`;
+        } else {
+          document.title = 'App';
+        }
+      }, 1000)
+    }
+
+    setMessages();
+    
+    const addMessage = () => {
+      messages++;
+      clearInterval(intervalId);
+      setMessages();
+    }
+    
+    const removeMessage = () => messages--;
+
+    // let timeoutId;
+    // function addToCart() {
+      
+    //   const displayElement = document.querySelector('.js-display-msg');
+    //   displayElement.innerHTML = 'Added';
+    //   timeoutId = setTimeout(function() {
+    //     displayElement.innerHTML = '';
+    //   },2000);
+    // }
+    // clearTimeout(timeoutId);
+
+    // function clickButton() {
+    //   const buttonElement = document.querySelector('.js-start-btn');
+    //   if (buttonElement.innerHTML === 'Start') {
+    //     buttonElement.innerHTML = 'Loading...';
+    //     setTimeout(function() {
+    //       buttonElement.innerHTML = 'Finished';
+    //     }, 1000)
+    //   } else {
+    //     buttonElement.innerHTML = 'Start';
+    //   }
+    // }
+
+    const add = function() {
+      console.log(2+3);
+    }
+    // add();
+    // add();
+
+    function runTwice(fun) {
+      fun();
+      fun();
+    }
+
+    // runTwice(function() {
+    //   console.log('12b');
+    // })
+
+    // runTwice(add);
+  </script>
+</body>
+</html>

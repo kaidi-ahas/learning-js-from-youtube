@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    // Discount depending on age and isHoliday variable
+    const age = Math.floor(Math.random()*100)+1; // get a random number from 0-100
+    console.log(age);
+    const randomChoice = Math.random(); // for isHoliday variable
+    const isHoliday = randomChoice > 1/2 ? true : false;
+    console.log(isHoliday);
+    const result = age <= 6 && !isHoliday || age >= 65 ? 'Discount' : 'No discount';
+    console.log(result);
+  </script>
+</body>
+</html>

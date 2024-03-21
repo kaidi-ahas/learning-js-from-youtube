@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Arrays and Loops</title>
+</head>
+<body>
+  <script>
+    // const arr = [
+    //   10,
+    //   true,
+    //   'hey',
+    //   undefined,
+    //   null,
+    //   0,
+    //   0.5,
+    //   {'hi': 5}
+    // ];
+    // console.log(typeof arr);
+    // console.log(Array.isArray(arr));
+    // console.log(arr.length);
+
+    // arr.push({name: 'kaie'});
+    // arr.splice(3, 5);
+    // console.log(arr);
+
+    // const array1 = [1, 2, 3];
+    // const array2 = array1.slice();
+    // array2.push(4);
+    // console.log(array1);
+    // console.log(array2);
+
+    // desctructuring
+    // const [firstValue, secondValue, thirdValue] = [1, 2, 3];
+    // console.log(firstValue, secondValue, thirdValue);
+
+    // for (let i=1; i<=10; i++) {
+    //   if (i%3 === 0) {
+    //     continue
+    //   }
+    //   console.log(i);
+    //   if (i === 8) {
+    //     continue;
+    //   }
+    // }
+
+    // let i=1;
+    // while(i <= 10) {
+    //   if (i%3 === 0) {
+    //     i++;
+    //     continue;
+    //   }
+    //   console.log(i);
+    //   i++;
+    // }
+    
+    function doubleArray(nums) {
+      const numsDoubled = [];
+      for (let i=0; i<nums.length; i++) {
+        const num = nums[i];
+        if (num === 0) {
+          break;
+        }
+        numsDoubled.push(num*2);
+      }
+      return numsDoubled;
+    }
+    const nums = [1, 1, 0];
+    console.log(doubleArray(nums));
+  </script>
+</body>
+</html>
